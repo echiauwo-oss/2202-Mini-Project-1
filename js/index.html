@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Course Explorer</title>
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="layout-shell">
+
+    <!-- Header & Brand Seal -->
+
+    <header class="top-banner">
+      <div class="brand-lockup">
+        <div class="monogram-seal" aria-hidden="true">谢</div>
+        <div class="brand-copy">
+          <h1>Course Explorer</h1>
+          <p class="brand-tagline">Academic Catalog &amp; Curriculum Directory</p>
+        </div>
+      </div>
+    </header>
+
+    <main>
+
+      <!-- JSON File Input & Error Alert -->
+
+      <section class="surface-box upload-box">
+        <h2>Load Courses (JSON)</h2>
+        <div class="upload-controls">
+          <input type="file" id="json-file-control" accept=".json,application/json" />
+        </div>
+        <p id="alert-message-box" class="alert-text" role="alert"></p>
+      </section>
+
+      <!-- Filter Dropdowns & Sort Controls -->
+
+      <section class="surface-box filter-box">
+        <div class="section-header-row">
+          <h2>Sort and Filter</h2>
+          <button type="button" id="reset-filters-btn" class="reset-btn">Reset Filters</button>
+        </div>
+
+        <div class="filter-bar-grid">
+          <label for="filter-department">
+            <span>Department</span>
+            <select id="filter-department">
+              <option value="All">All</option>
+            </select>
+          </label>
+
+          <label for="filter-level">
+            <span>Level</span>
+            <select id="filter-level">
+              <option value="All">All</option>
+            </select>
+          </label>
+
+          <label for="filter-credits">
+            <span>Credits</span>
+            <select id="filter-credits">
+              <option value="All">All</option>
+            </select>
+          </label>
+
+          <label for="filter-instructor">
+            <span>Instructor</span>
+            <select id="filter-instructor">
+              <option value="All">All</option>
+            </select>
+          </label>
+
+          <label for="filter-semester">
+            <span>Semester</span>
+            <select id="filter-semester">
+              <option value="All">All</option>
+            </select>
+          </label>
+
+          <label for="order-select">
+            <span>Sort By</span>
+            <select id="order-select">
+              <option value="none">None</option>
+              <option value="id-asc">ID (A–Z)</option>
+              <option value="id-desc">ID (Z–A)</option>
+              <option value="title-asc">Title (A–Z)</option>
+              <option value="title-desc">Title (Z–A)</option>
+              <option value="semester-asc">Semester (Earliest first)</option>
+              <option value="semester-desc">Semester (Latest first)</option>
+            </select>
+          </label>
+        </div>
+      </section>
+
+      <!-- Course List & Detail Inspector -->
+
+      <section class="explorer-split">
+        <div id="course-column" class="course-column" aria-label="Course List"></div>
+        <aside id="inspector-pane" class="inspector-pane" aria-live="polite">
+          <p class="muted-hint">Upload a JSON file and select a course code to inspect its details.</p>
+        </aside>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
