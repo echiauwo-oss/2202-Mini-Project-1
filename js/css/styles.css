@@ -1,0 +1,308 @@
+/* ------------------------------------------
+   Theme Variables & Base Reset
+   ------------------------------------------ */
+
+:root {
+  --raw-linen: #F2F0E6;
+  --paper-card: #F8F7F2;
+  --ink-black: #1C1C1E;
+  --faded-graphite: #6E6E73;
+  --tea-green: #8B9A8B;
+  --tea-green-soft: rgba(139, 154, 139, 0.16);
+  --hairline: rgba(28, 28, 30, 0.16);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 36px 24px 56px;
+  background-color: var(--raw-linen);
+  color: var(--ink-black);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+
+.layout-shell {
+  max-width: 1140px;
+  margin: 0 auto;
+}
+
+/* ------------------------------------------
+   Header & Monogram Badge
+   ------------------------------------------ */
+
+.top-banner {
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 18px;
+  margin-bottom: 24px;
+}
+
+.brand-lockup {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.monogram-seal {
+  width: 46px;
+  height: 46px;
+  border: 1.5px solid var(--ink-black);
+  outline: 1px solid var(--tea-green);
+  outline-offset: -5px;
+  background-color: var(--paper-card);
+  color: var(--ink-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Noto Serif SC", "Songti SC", "SimSun", Georgia, serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  user-select: none;
+  flex-shrink: 0;
+}
+
+.brand-copy h1 {
+  margin: 0;
+  font-size: 1.8rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.brand-tagline {
+  margin: 2px 0 0;
+  font-size: 0.88rem;
+  color: var(--faded-graphite);
+}
+
+/* ------------------------------------------
+   Upload & Filter Panels
+   ------------------------------------------ */
+
+.surface-box {
+  background-color: var(--paper-card);
+  border: 1px solid var(--hairline);
+  padding: 18px 20px;
+  margin-bottom: 18px;
+}
+
+.surface-box h2 {
+  margin: 0;
+  font-size: 0.82rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--faded-graphite);
+}
+
+.upload-box h2 {
+  margin-bottom: 12px;
+}
+
+input[type="file"] {
+  font-size: 0.9rem;
+  color: var(--ink-black);
+}
+
+input[type="file"]::file-selector-button {
+  background-color: var(--ink-black);
+  color: var(--raw-linen);
+  border: 1px solid var(--ink-black);
+  padding: 6px 14px;
+  margin-right: 12px;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+input[type="file"]::file-selector-button:hover {
+  background-color: var(--tea-green);
+  border-color: var(--tea-green);
+  color: var(--ink-black);
+}
+
+.alert-text {
+  margin: 10px 0 0;
+  color: #9e2a2b;
+  font-size: 0.9rem;
+  font-weight: 600;
+  min-height: 1.2em;
+}
+
+.section-header-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 14px;
+}
+
+.reset-btn {
+  background-color: transparent;
+  color: var(--ink-black);
+  border: 1px solid var(--hairline);
+  padding: 5px 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.reset-btn:hover {
+  background-color: var(--tea-green-soft);
+  border-color: var(--tea-green);
+}
+
+.filter-bar-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(155px, 1fr));
+  gap: 12px;
+}
+
+.filter-bar-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--faded-graphite);
+}
+
+.filter-bar-grid select {
+  background-color: var(--raw-linen);
+  color: var(--ink-black);
+  border: 1px solid var(--hairline);
+  padding: 7px 9px;
+  font-size: 0.88rem;
+  outline: none;
+}
+
+.filter-bar-grid select:focus {
+  border-color: var(--tea-green);
+}
+
+/* ------------------------------------------
+   Course List & Detail Inspector Layout
+   ------------------------------------------ */
+
+.explorer-split {
+  display: grid;
+  grid-template-columns: 320px 1fr;
+  gap: 20px;
+  align-items: start;
+}
+
+.course-column {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.course-pill {
+  padding: 12px 16px;
+  background-color: var(--paper-card);
+  border: 1px solid var(--hairline);
+  border-left: 3px solid transparent;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.course-pill:hover {
+  background-color: var(--tea-green-soft);
+  border-left-color: var(--tea-green);
+}
+
+.course-pill.is-selected {
+  background-color: var(--tea-green-soft);
+  border-color: var(--tea-green);
+  border-left: 4px solid var(--tea-green);
+  font-weight: 700;
+}
+
+.inspector-pane {
+  background-color: var(--paper-card);
+  border: 1px solid var(--hairline);
+  padding: 24px 28px;
+  min-height: 300px;
+}
+
+.detail-header {
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 14px;
+  margin-bottom: 16px;
+}
+
+.detail-code-tag {
+  display: inline-block;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  color: var(--faded-graphite);
+  margin-bottom: 4px;
+}
+
+.detail-header h3 {
+  margin: 0;
+  font-size: 1.4rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+}
+
+.summary-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 18px;
+}
+
+.summary-badge {
+  background-color: var(--raw-linen);
+  border: 1px solid var(--hairline);
+  padding: 6px 12px;
+  font-size: 0.84rem;
+}
+
+.summary-badge strong {
+  color: var(--faded-graphite);
+  font-weight: 600;
+  margin-right: 4px;
+}
+
+.meta-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 10px 18px;
+  margin-bottom: 18px;
+  font-size: 0.94rem;
+}
+
+.meta-item span {
+  color: var(--faded-graphite);
+  font-weight: 600;
+  margin-right: 6px;
+}
+
+.detail-body {
+  margin: 0;
+  padding-top: 14px;
+  border-top: 1px solid var(--hairline);
+  color: var(--ink-black);
+  line-height: 1.6;
+}
+
+.muted-hint {
+  color: var(--faded-graphite);
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .explorer-split {
+    grid-template-columns: 1fr;
+  }
+}
