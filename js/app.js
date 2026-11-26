@@ -82,7 +82,7 @@ class Course {
     return calendarYear * 10 + seasonIndices[seasonName];
   }
 
-  // Return a single-line summary string for the course
+  // Return a single-line summary string for hover tooltips
 
   buildPlainSummary() {
     return `${this._id} - ${this._title} (${this._department}, ${this.semester})`;
@@ -358,6 +358,7 @@ function renderCodeSidebar(records) {
     const pill = document.createElement("div");
     pill.className = "course-pill";
     pill.textContent = course.id;
+    pill.title = course.buildPlainSummary();
 
     if (course.id === selectedCode) {
       pill.classList.add("is-selected");
@@ -365,24 +366,4 @@ function renderCodeSidebar(records) {
 
     pill.addEventListener("click", function () {
       selectedCode = course.id;
-      course.injectDetailView(inspectorPane);
-      renderCodeSidebar(records);
-    });
-
-    courseColumn.appendChild(pill);
-  });
-}
-
-// Re-run filtering, sorting, and list rendering whenever controls change
-
-function syncCatalogDisplay() {
-  const filteredList = extractMatchingCourses(loadedRecords);
-  const orderedList = arrangeCourses(filteredList);
-  renderCodeSidebar(orderedList);
-}
-
-// ------------------------------------------
-// JSON File Upload & Event Listeners
-// ------------------------------------------
-
-// Read and
+      course.
